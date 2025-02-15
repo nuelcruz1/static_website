@@ -1,4 +1,4 @@
 #variable declerations
 variable"bucket_name"{
-    default ="staticbucket2025"
+    default ="static bucket2025"
 }

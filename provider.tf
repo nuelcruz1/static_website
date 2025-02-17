@@ -9,5 +9,6 @@ terraform {
 
 provider "aws" {
   # Configuration options
-  region = "us-east-1"
+  profile = "NUELCRUZ"
+  region = var.my_bucket_region
 }

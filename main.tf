@@ -1,5 +1,5 @@
 #creating s3 bucket
-resource "aws_s3_bucket" "mystaticbucket" {
+resource "aws_s3_bucket" "my-static-bucket" {
   bucket = var.my_bucket_name
  }
 # s3 bucket ownership control
@@ -26,13 +26,13 @@ resource "aws_s3_bucket" "mystaticbucket" {
      aws_s3_bucket_public_access_block.example,
    ]
 
-    bucket = aws_s3_bucket.mystaticbucket.id
+    bucket = aws_s3_bucket.my-static-bucket.id
     acl    = "public-read"
  }
   #s3 bucket policy resource
  resource "aws_s3_bucket_policy" "host_bucket_policy" {
   # ID of the S3 bucket
-  bucket =  aws_s3_bucket.mystaticbucket.id 
+  bucket =  aws_s3_bucket.my-static-bucket.id 
 
   # Policy JSON for allowing public read access
   policy = jsonencode({
@@ -60,7 +60,7 @@ module "template_files" {
 #website hosting settings
 resource "aws_s3_bucket_website_configuration" "web-configuration" {
   # ID of the S3 bucket
-  bucket = aws_s3_bucket.mystaticbucket.id 
+  bucket = aws_s3_bucket.my-static-bucket.id 
 
   index_document {
     suffix = "index.html"

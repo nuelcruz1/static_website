@@ -7,6 +7,6 @@ variable"my_bucket_region"{
 
 variable"my_bucket_name"{
     description = "my bucket name"
-    default ="statc-web"
+    default ="nuel-static-website-bucket"
     type = string
 }

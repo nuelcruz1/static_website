@@ -6,7 +6,7 @@ variable"my_bucket_region"{
 }
 
 variable"my_bucket_name"{
-    description = "my  bucket name"
-    default ="terraform bucket36987"
+    description = "my bucket name"
+    default ="statc-web"
     type = string
 }

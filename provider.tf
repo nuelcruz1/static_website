@@ -9,6 +9,6 @@ terraform {
 
 provider "aws" {
   # Configuration options
-  profile = "NUELCRUZ"
+  profile = "Admin_User"
   region = var.my_bucket_region
 }

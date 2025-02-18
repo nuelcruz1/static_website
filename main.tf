@@ -48,7 +48,7 @@ resource "aws_s3_bucket" "my-static-bucket" {
   })
 }
 
-
+# code to source for files from paths
 module "template_files" {
     source = "hashicorp/dir/template"
 
@@ -68,7 +68,7 @@ resource "aws_s3_bucket_website_configuration" "web-configuration" {
 }
 
 
-# AWS S3 object resource for hosting bucket files
+# Uploading files to s3 
 resource "aws_s3_object" "Bucket_files" {
   bucket =  aws_s3_bucket.my-static-bucket.id  # ID of the S3 bucket
 

@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "my-static-bucket" {
  }
 # s3 bucket ownership control
  resource "aws_s3_bucket_ownership_controls" "example" {
-   bucket = aws_s3_bucket.mystaticbucket.id
+   bucket = aws_s3_bucket.my-static-bucket.id
 
    rule {
      object_ownership = "BucketOwnerPreferred"
@@ -12,7 +12,7 @@ resource "aws_s3_bucket" "my-static-bucket" {
  }
  # s3 bucket public access config
  resource "aws_s3_bucket_public_access_block" "example" {
-   bucket = aws_s3_bucket.mystaticbucket.id
+   bucket = aws_s3_bucket.my-static-bucket.id
 
    block_public_acls       = false
    block_public_policy     = false
@@ -52,7 +52,7 @@ resource "aws_s3_bucket" "my-static-bucket" {
 module "template_files" {
     source = "hashicorp/dir/template"
 
-    base_dir = "${path.module}/web-files"
+    base_dir = "${path.module}/web_doc"
 }
 
 # https://registry.terraform.io/modules/hashicorp/dir/template/latest
@@ -70,7 +70,7 @@ resource "aws_s3_bucket_website_configuration" "web-configuration" {
 
 # AWS S3 object resource for hosting bucket files
 resource "aws_s3_object" "Bucket_files" {
-  bucket =  aws_s3_bucket.mystaticbucket.id  # ID of the S3 bucket
+  bucket =  aws_s3_bucket.my-static-bucket.id  # ID of the S3 bucket
 
   for_each     = module.template_files.files
   key          = each.key

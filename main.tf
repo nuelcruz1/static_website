@@ -70,7 +70,8 @@ resource "aws_s3_bucket_website_configuration" "web-configuration" {
 
 # Uploading files to s3 
 resource "aws_s3_object" "Bucket_files" {
-  bucket =  aws_s3_bucket.ncinnovativehub.com  # ID of the S3 bucket
+  bucket =  aws_s3_bucket.ncinnovativehub.com 
+   # ID of the S3 bucket
 
   for_each     = module.template_files.files
   key          = each.key

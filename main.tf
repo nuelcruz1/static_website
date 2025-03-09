@@ -1,10 +1,10 @@
 #creating s3 bucket
-resource "aws_s3_bucket" "ncinnovativehub.com" {
+resource "aws_s3_bucket" "my-static-bucket" {
   bucket = var.my_bucket_name
  }
 # s3 bucket ownership control
  resource "aws_s3_bucket_ownership_controls" "example" {
-   bucket = aws_s3_bucket.ncinnovativehub.com
+   bucket = aws_s3_bucket.my-static-bucket.id
 
    rule {
      object_ownership = "BucketOwnerPreferred"
@@ -12,7 +12,7 @@ resource "aws_s3_bucket" "ncinnovativehub.com" {
  }
  # s3 bucket public access config
  resource "aws_s3_bucket_public_access_block" "example" {
-   bucket = aws_s3_bucket.ncinnovativehub.com
+   bucket = aws_s3_bucket.my-static-bucket.id
 
    block_public_acls       = false
    block_public_policy     = false
@@ -26,13 +26,13 @@ resource "aws_s3_bucket" "ncinnovativehub.com" {
      aws_s3_bucket_public_access_block.example,
    ]
 
-    bucket = aws_s3_bucket.ncinnovativehub.com
+    bucket = aws_s3_bucket.my-static-bucket.id
     acl    = "public-read"
  }
   #s3 bucket policy resource
  resource "aws_s3_bucket_policy" "host_bucket_policy" {
   # ID of the S3 bucket
-  bucket =  aws_s3_bucket.ncinnovativehub.com
+  bucket =  aws_s3_bucket.my-static-bucket.id 
 
   # Policy JSON for allowing public read access
   policy = jsonencode({
@@ -70,8 +70,7 @@ resource "aws_s3_bucket_website_configuration" "web-configuration" {
 
 # Uploading files to s3 
 resource "aws_s3_object" "Bucket_files" {
-  bucket =  aws_s3_bucket.ncinnovativehub.com
-   # ID of the S3 bucket
+  bucket =  aws_s3_bucket.my-static-bucket.id  # ID of the S3 bucket
 
   for_each     = module.template_files.files
   key          = each.key

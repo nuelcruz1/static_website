@@ -26,7 +26,7 @@ resource "aws_s3_bucket" "my-static-bucket" {
      aws_s3_bucket_public_access_block.example,
    ]
 
-    bucket = aws_s3_bucket.my-static-bucket.id
+    bucket = aws_s3_bucket.my-static-bucket
     acl    = "public-read"
  }
   #s3 bucket policy resource

@@ -1,5 +1,5 @@
 #creating s3 bucket
-resource "aws_s3_bucket" "ncinnovativehub" {
+resource "aws_s3_bucket" "ncinnovative" {
   bucket = var.my_bucket_name
  }
 # s3 bucket ownership control
@@ -20,11 +20,13 @@ resource "aws_s3_bucket" "ncinnovativehub" {
    restrict_public_buckets = false
  }
  # s3 bucket acl resource
-  resource "aws_s3_bucket_acl" "example" {
+  resource "aws_s3_bucket_acl" "ncinnovative" {
    depends_on = [
-     aws_s3_bucket_ownership_controls.example,
-     aws_s3_bucket_public_access_block.example,
+     aws_s3_bucket.ncinnovativehub.id,
+     aws_s3_bucket_public_access_block.Nuel,
+     aws_s3_bucket_ownership_controls.example
    ]
+   
 
     bucket = aws_s3_bucket.ncinnovativehub.id
     acl    = "public-read"

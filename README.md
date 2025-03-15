@@ -1,19 +1,33 @@
-# my_static_web
+# Hosting a smart static website for N.C Innovative Hub on aws using terraform.
 Here’s my documentation for hosting a static café website using Terraform. Let me know if you need any modifications! 🚀
 
-Cafe Website Deployment using Terraform
+N.C Innovative Hub Website Deployment using Terraform
+
+ The Problem It Addresses
+As part of my project, I aimed to host a smart static website for the above company to leverage;
+
+Globally Accessibility: Ensuring fast load times for users worldwide.
+Secure: Protecting the website from common web exploits and ensuring data is transmitted securely.
+
+Cost-Effectiveness: Keeping hosting costs low while maintaining high availability and scalability.
+
+Security: Aid at avoiding security vulnerabilies.
+
+This project addresses these challenges by leveraging AWS services like S3, CloudFront, ACM, WAF, and CloudWatch to create a robust, secure, and scalable hosting solution tailored to your needs.
 
 This repository contains Terraform code to automate the deployment of a static website for a café using GitHub Pages.
 
-📁 static_website  
- ├── 📄 main.tf        # Defines AWS resources  
+📁 N.C Innovative Hub smart website
+ ├── 📄 s3.tf        # Defines AWS resources  
  ├── 📄 variables.tf   # Input variables  
  ├── 📄 outputs.tf     # Output values  
  ├── 📄 provider.tf    # AWS provider configuration  
- ├── 📄 index.html     # Café website homepage  
+ ├── 📄 index.html     # N.C Innovative Hub website homepage  
  ├── 📄 error.html     # Custom error page  
- ├── 📄 README.md      # Project documentation  
-
+ ├── 📄 cloudfront.tf   #  Accelerate content delivery
+ ├── 📄 WAF     # Protect site for treat like Sql.
+ ├── 📄 cloudwatch.tf   # create cloudwatch metric to monitor key performance
+ 
 
 Prerequisites
 GitHub account

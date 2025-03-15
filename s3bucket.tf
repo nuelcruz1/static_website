@@ -8,6 +8,8 @@ resource "aws_s3_bucket" "ncinnovative" {
 
    rule {
      object_ownership = "BucketOwnerPreferred"
+     #object_ownership = "ObjectWriter
+     #object_ownership = "BucketOwnerEnforced
    }
  }
  # s3 bucket public access config

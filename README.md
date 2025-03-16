@@ -69,14 +69,12 @@ Faster load times and global availability through CloudFront’s edge locations.
 3. Enhancing Security:
 4. Secure data transmission with HTTPS via ACM, ensuring user data is protected.
 Protection against common web exploits using WAF.
-
 5. Reducing Costs:
 Pay-as-you-go pricing with AWS services ensures cost efficiency.
 Free Tier usage for S3, CloudFront, and WAF reduces initial costs, making it an affordable solution for small to medium-sized businesses.
-
 6. Enabling Better Decision-Making:
 Logs and metrics provide insights into website performance and user behavior, enabling data-driven decisions.
-Real-time monitoring and alerts via CloudWatch help you identify and resolve issues quickly.
+7. Real-time monitoring and alerts via CloudWatch help you identify and resolve issues quickly.
 
 Conclusion:
 This project demonstrates how I successfully built a smart static website hosting solution on AWS for N.C Innovative Hub. By addressing performance, security, scalability, and cost challenges, which has indeed created a reliable and secure online presence that delivers value to the business. The use of various AWS services has ensured that the website is fast, secure, and cost-effective, while also providing the tools to monitor and optimize its performance over time.
